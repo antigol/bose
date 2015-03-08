@@ -83,5 +83,19 @@ Il reste alors à trouver $u$ en fonction de $\tau$ en fixant $N$.
 	\caption{Le potentiel chimique en fonction du nombre de Bosons.}
 \end{figure}
 
+\section{Fluctuation du nombre de particules}
+
+La variance est donnée par :
+
+$$Var(N) = \frac{1}{\beta^2} \frac{\partial^2}{\partial \mu^2} \ln Z = \sum_k \frac{1}{2 \cosh(\beta(E_k-\mu))-2}$$
+
+Ce qui après passage à l'intégrale et adimensionnalisation donne 
+$$Var(N) = \frac{1}{2\cosh(-\frac{u}{\tau})-2} + \frac{2N}{\sqrt{\pi} \zeta(3/2)} \int_0^\infty \frac{\sqrt{x} dx}{2\cosh(\frac{x-u}{\tau})-2}$$
+
+\begin{figure}
+	\centering
+	\includegraphics{rel.eps}
+	\caption{Fluctuation relative du nombre de particules.}
+\end{figure}
 
 \end{document}

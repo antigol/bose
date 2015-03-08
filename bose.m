@@ -1,12 +1,13 @@
-function U = bose(TAU, N)
+function [U, Nrel] = bose(TAU, N)
 
 c = 2 / (sqrt(pi) * zeta(3/2));
 
 function z = f(x, u, tau) 
-	z = x.^0.5 ./ (exp((x - u) / tau) - 1);
+	z = sqrt(x) ./ (exp((x - u) / tau) - 1);
 end
 
 U = zeros(size(TAU));
+Nrel = zeros(size(TAU));
 
 for i=1:length(TAU),
 	tau = TAU(i);
@@ -19,6 +20,9 @@ for i=1:length(TAU),
 	if info~=1,
 		display('error');
 	end
+	
+	dN2 = 1/(2*cosh(U(i)/tau)-2) + 2*N/(sqrt(pi) * zeta(3/2)) * integral(@(x) sqrt(x)./(2*cosh((x-U(i))/tau)-2), 0, Inf);
+	Nrel(i) = sqrt(dN2) / N;
 end
 
 end

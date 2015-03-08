@@ -4,12 +4,13 @@ clc;
 
 tau = linspace(1e-2, 3, 100);
 
-N = [1, 2, 5, 10, 1e4, 1e10];
+N = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 1e10];
 
 u = zeros(length(N), length(tau));
+Nrel = zeros(length(N), length(tau));
 
 for k = 1:length(N),
-	u(k,:) = bose(tau, N(k));
+	[u(k,:), Nrel(k,:)] = bose(tau, N(k));
 end
 
 plot(tau, u);
