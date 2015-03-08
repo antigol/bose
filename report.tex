@@ -90,7 +90,10 @@ La variance est donnée par :
 $$Var(N) = \frac{1}{\beta^2} \frac{\partial^2}{\partial \mu^2} \ln Z = \sum_k \frac{1}{2 \cosh(\beta(E_k-\mu))-2}$$
 
 Ce qui après passage à l'intégrale et adimensionnalisation donne 
-$$Var(N) = \frac{1}{2\cosh(-\frac{u}{\tau})-2} + \frac{2N}{\sqrt{\pi} \zeta(3/2)} \int_0^\infty \frac{\sqrt{x} dx}{2\cosh(\frac{x-u}{\tau})-2}$$
+\begin{gather}
+Var(N) = \frac{1}{2\cosh(-\beta \mu)-2} + \frac{2\pi V}{h^3} (2m)^{3/2} \int_0^\infty \frac{\sqrt{E} dE}{2\cosh(\beta(E-\mu))-2} \\
+= \frac{1}{2\cosh(-\frac{u}{\tau})-2} + \frac{2N}{\sqrt{\pi} \zeta(3/2)} \int_0^\infty \frac{\sqrt{x} dx}{2\cosh(\frac{x-u}{\tau})-2}
+\end{gather}
 
 \begin{figure}
 	\centering
