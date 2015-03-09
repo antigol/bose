@@ -4,7 +4,7 @@ clc;
 
 tau = linspace(1e-2, 3, 100);
 
-N = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 1e10];
+N = [1, 2, 5, 1e10];
 
 u = zeros(length(N), length(tau));
 Nrel = zeros(length(N), length(tau));
@@ -17,11 +17,14 @@ plot(tau, u);
 a = axis();
 hold on;
 plot(tau, -zeta(3/2)^2/(4*pi) * tau.^-2 .* (tau.^(3/2)-1).^2, '--k');
+plot(tau, -tau ./(1*(1-tau.^(3/2))), '--k');
+plot(tau, -tau ./(2*(1-tau.^(3/2))), '--k');
+plot(tau, -tau ./(5*(1-tau.^(3/2))), '--k');
 axis(a);
 %legendCell = cellstr(num2str(N, 'N = %-d'));
 %legend(legendCell);
 
-legend('N=1', 'N=2', 'N=5', 'N=10', 'N=1e4', 'N=1e10', 'Approximation theorique');
+legend('N=1', 'N=2', 'N=5', 'N=1e10', 'Approximation theorique');
 
 xlabel('temperature')
 ylabel('potentiel chimique');
