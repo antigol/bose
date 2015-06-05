@@ -1,4 +1,4 @@
-clear all;
+clear;
 close all;
 clc;
 
@@ -15,16 +15,16 @@ end
 
 plot(tau, u);
 a = axis();
-hold on;
-plot(tau, -zeta(3/2)^2/(4*pi) * tau.^-2 .* (tau.^(3/2)-1).^2, '--k');
-plot(tau, -tau ./(1*(1-tau.^(3/2))), '--k');
-plot(tau, -tau ./(2*(1-tau.^(3/2))), '--k');
-plot(tau, -tau ./(5*(1-tau.^(3/2))), '--k');
-axis(a);
+%hold on;
+%plot(tau, -zeta(3/2)^2/(4*pi) * tau.^-2 .* (tau.^(3/2)-1).^2, '--k');
+%plot(tau, -tau ./(1*(1-tau.^(3/2))), '--k');
+%plot(tau, -tau ./(2*(1-tau.^(3/2))), '--k');
+%plot(tau, -tau ./(5*(1-tau.^(3/2))), '--k');
+%axis(a);
 %legendCell = cellstr(num2str(N, 'N = %-d'));
 %legend(legendCell);
 
-legend('N=1', 'N=2', 'N=5', 'N=1e10', 'Approximation theorique');
+legend('N=1', 'N=2', 'N=5', 'N=1e10');
 
 xlabel('temperature')
 ylabel('potentiel chimique');
